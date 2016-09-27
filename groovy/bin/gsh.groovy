@@ -119,6 +119,7 @@ GROUPER_CP=${GROUPER_CP}:${CLASSPATH}
 if [ "$arg1" != "-initEnv" ]; then
 	# ----- Execute The Requested Command ---------------------------------------
 
+    export GROUPER_HOME="${GROUPER_HOME%/}/"
 	echo Using GROUPER_HOME:           $GROUPER_HOME
 	echo Using GROUPER_CONF:           $GROUPER_CONF
 	echo Using JAVA:                   $JAVA

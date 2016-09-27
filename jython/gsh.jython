@@ -85,6 +85,7 @@ GROUPER_CP=${GROUPER_CP}:${CLASSPATH}
 
 	# ----- Execute The Requested Command ---------------------------------------
 
+    export GROUPER_HOME="${GROUPER_HOME%/}/"
 	echo Using GROUPER_HOME:           $GROUPER_HOME
 	echo Using GROUPER_CONF:           $GROUPER_CONF
 	echo Using JAVA:                   $JAVA
@@ -101,8 +102,8 @@ GROUPER_CP=${GROUPER_CP}:${CLASSPATH}
         if [ ! -z "$JYTHONPATH" ]; then
             JYPATH="$JYPATH:$JYTHONPATH"
         fi
-        ${JYTHON} -Dpython.path="$JYPATH" "$@"
+        ${JYTHON} -Dpython.path="$JYPATH" -Dgrouper.home="$GROUPER_HOME" "$@"
     else
-        ${JYTHON} -i -Dpython.path="${GROUPER_CP}" "$JYTHON_GROUPER" 
+        ${JYTHON} -i -Dpython.path="${GROUPER_CP}" -Dgrouper.home="$GROUPER_HOME" "$JYTHON_GROUPER" 
     fi
 #:end
