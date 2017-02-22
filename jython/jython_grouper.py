@@ -11,7 +11,7 @@ except (ImportError,), ex:
 # Put some common names in scope.
 import edu.internet2.middleware.grouper as grouper
 import edu.internet2.middleware.grouper.filter as grouper_filter
-from import edu.internet2.middleware.grouper.pit import PITUtils
+from edu.internet2.middleware.grouper.pit import PITUtils
 
 def getRootSession():
     """
